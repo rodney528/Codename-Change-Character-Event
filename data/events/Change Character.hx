@@ -123,10 +123,12 @@ public function changeCharacter(strumIndex:Int, ?charName:String, ?memberIndex:I
 			iconP2.setIcon(newChar.getIcon());
 			if (Options.colorHealthBar) healthBar.createColoredEmptyBar(newChar.iconColor ?? (PlayState.opponentMode ? 0xFF66FF33 : 0xFFFF0000));
 			healthBar.updateBar();
+			healthBar.updateHitbox();
 		} else if (strumIndex == 1) { // player side
 			iconP1.setIcon(newChar.getIcon());
 			if (Options.colorHealthBar) healthBar.createColoredFilledBar(newChar.iconColor ?? (PlayState.opponentMode ? 0xFFFF0000 : 0xFF66FF33));
 			healthBar.updateBar();
+			healthBar.updateHitbox();
 		}
 	}
 
